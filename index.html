@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Saisha Arora</title>
     <meta
       name="description"
@@ -26,6 +26,11 @@
       rel="icon"
       href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="18" fill="%23201413"/><text x="50%" y="54%" text-anchor="middle" font-size="28" font-family="Arial" fill="%23fff7f3">S</text></svg>'
     />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Saisha Arora" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -41,6 +46,85 @@
         <div class="background-glow"></div>
         <div class="overlay-layer"></div>
 
+        <button class="share-btn" type="button" data-share aria-label="Share this page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          <span class="share-toast" aria-live="polite"></span>
+        </button>
+
+        <div class="share-sheet" data-share-sheet hidden>
+          <div class="share-sheet-backdrop" data-share-close></div>
+          <div class="share-sheet-panel" role="dialog" aria-modal="true" aria-label="Share this page">
+            <span class="share-sheet-handle"></span>
+            <p class="share-sheet-title">Share via</p>
+            <div class="share-options">
+              <a class="share-option" data-share-target="whatsapp" href="#" target="_blank" rel="noopener">
+                <span class="share-icon whatsapp">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.03 2 11c0 2.09.86 4 2.29 5.54L3 21l4.65-1.22A10.4 10.4 0 0 0 12 20c5.52 0 10-4.03 10-9S17.52 2 12 2z" />
+                  </svg>
+                </span>
+                <span>WhatsApp</span>
+              </a>
+              <a class="share-option" data-share-target="telegram" href="#" target="_blank" rel="noopener">
+                <span class="share-icon telegram">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M21.6 3.6 2.7 11c-.9.36-.9 1.66.02 2l4.53 1.5 1.75 5.6c.24.76 1.22.98 1.78.4l2.53-2.6 4.7 3.46c.7.5 1.7.13 1.9-.71l3.2-15c.2-.9-.7-1.6-1.53-1.05zM8.9 14.3l9.2-7.9c.24-.2-.02-.55-.3-.4L7 12.6l-.3 3.4z" />
+                  </svg>
+                </span>
+                <span>Telegram</span>
+              </a>
+              <a class="share-option" data-share-target="twitter" href="#" target="_blank" rel="noopener">
+                <span class="share-icon twitter">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-6.6L4.5 22H1.4l8.1-9.3L1 2h7l4.9 6L18.9 2zM17.6 20h1.9L7.5 4H5.5L17.6 20z" />
+                  </svg>
+                </span>
+                <span>X</span>
+              </a>
+              <a class="share-option" data-share-target="email" href="#">
+                <span class="share-icon email">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="M22 6 12 13 2 6"></path>
+                  </svg>
+                </span>
+                <span>Email</span>
+              </a>
+              <button class="share-option" type="button" data-copy-text="" data-copy-link aria-label="Copy link">
+                <span class="share-icon copy">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="12" height="12" rx="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </span>
+                <span>Copy Link</span>
+                <span class="copy-toast" aria-live="polite"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sparkles" aria-hidden="true">
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+          <span class="spark"></span>
+        </div>
+
         <div class="content">
           <div class="title-block reveal reveal-name">
             <p class="intro-line">Access To My Private World</p>
@@ -52,7 +136,24 @@
 
           <nav class="link-list" aria-label="Main links">
             <a
-              class="main-link main-link-primary reveal reveal-link-1"
+              class="main-link reveal reveal-link-1"
+              href="https://www.instagram.com/saisha.arora01?igsh=endhNTFoMWcwaTd3&utm_source=qr"
+              data-link="https://www.instagram.com/saisha.arora01?igsh=endhNTFoMWcwaTd3&utm_source=qr"
+            >
+              <span class="link-media image-card">
+                <img
+                  src="photos/instagram.jpg"
+                  alt="Instagram preview"
+                  class="link-thumb"
+                />
+              </span>
+              <span class="link-copy">
+                <strong>Instagram</strong>
+                <small>Photos and updates</small>
+              </span>
+            </a>
+            <a
+              class="main-link main-link-primary reveal reveal-link-2"
               href="https://fanvue.com/saishaarora"
               data-link="https://fanvue.com/saishaarora"
             >
@@ -67,66 +168,9 @@
                 <strong>Fanvue</strong>
                 <small>Exclusive Content</small>
               </span>
-            </a>
-            <a
-              class="main-link reveal reveal-link-2"
-              href="https://www.youtube.com/@saisha_arora1"
-              data-link="https://www.youtube.com/@saisha_arora1"
-            >
-              <span class="link-media image-card">
-                <img
-                  src="photos/youtube.jpg"
-                  alt="YouTube preview"
-                  class="link-thumb"
-                />
-              </span>
-              <span class="link-copy">
-                <strong>YouTube</strong>
-                <small>Videos and highlights</small>
-              </span>
-            </a>
-            <a
-              class="main-link reveal reveal-link-3"
-              href="https://www.facebook.com/share/1TrjHZk9M5/?mibextid=wwXIfr"
-              data-link="https://www.facebook.com/share/1TrjHZk9M5/?mibextid=wwXIfr"
-            >
-              <span class="link-media image-card">
-                <img
-                  src="photos/facebook.jpg"
-                  alt="Facebook preview"
-                  class="link-thumb"
-                />
-              </span>
-              <span class="link-copy">
-                <strong>Facebook</strong>
-                <small>Community and updates</small>
-              </span>
+              <span class="new-badge">New</span>
             </a>
           </nav>
-
-          <div class="social-row reveal reveal-socials" aria-label="Quick social links">
-            <a
-              class="social-pill"
-              href="https://fanvue.com/saishaarora"
-              data-link="https://fanvue.com/saishaarora"
-            >
-              <span>FV</span>
-            </a>
-            <a
-              class="social-pill"
-              href="https://www.facebook.com/share/1TrjHZk9M5/?mibextid=wwXIfr"
-              data-link="https://www.facebook.com/share/1TrjHZk9M5/?mibextid=wwXIfr"
-            >
-              <span>FB</span>
-            </a>
-            <a
-              class="social-pill"
-              href="https://www.youtube.com/@saisha_arora1"
-              data-link="https://www.youtube.com/@saisha_arora1"
-            >
-              <span>YT</span>
-            </a>
-          </div>
         </div>
       </section>
     </main>

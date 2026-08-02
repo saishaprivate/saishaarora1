@@ -1,0 +1,13 @@
+{
+  "name": "Saisha Arora",
+  "short_name": "Saisha Arora",
+  "description": "Official links, exclusive content, and latest updates from Saisha Arora.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#201413",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
