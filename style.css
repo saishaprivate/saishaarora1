@@ -293,28 +293,6 @@ h1 {
   box-shadow: 0 0 0 3px rgba(246, 211, 194, 0.14);
 }
 
-.avatar-badge {
-  position: absolute;
-  top: -4px;
-  right: 2px;
-  z-index: 1;
-  background: linear-gradient(135deg, #ff8a65, var(--accent));
-  color: #201413;
-  font-size: 0.5rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  padding: 2px 6px;
-  border-radius: 999px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  animation: badgePulse 2.4s ease-in-out infinite;
-}
-
-@keyframes badgePulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
-
 .avatar-label {
   text-align: center;
 }
@@ -335,10 +313,10 @@ h1 {
   transition-delay: 0s;
 }
 
-.content.is-revealed .link-avatar:nth-child(1) { transition-delay: 0.1s; }
-.content.is-revealed .link-avatar:nth-child(2) { transition-delay: 0.18s; }
-.content.is-revealed .link-avatar:nth-child(3) { transition-delay: 0.26s; }
-.content.is-revealed .link-avatar:nth-child(4) { transition-delay: 0.34s; }
+.content.is-revealed .link-avatar:nth-child(1) { transition-delay: 0.45s; }
+.content.is-revealed .link-avatar:nth-child(2) { transition-delay: 0.62s; }
+.content.is-revealed .link-avatar:nth-child(3) { transition-delay: 0.79s; }
+.content.is-revealed .link-avatar:nth-child(4) { transition-delay: 0.96s; }
 
 .share-btn {
   position: absolute;
