@@ -1,20 +1,53 @@
 document.documentElement.classList.add("page-ready");
 
-const directLinks = document.querySelectorAll(".main-link[data-link]");
-const socialLinks = document.querySelectorAll(".social-pill[data-link]");
+const content = document.querySelector(".content");
+const introLayer = document.querySelector("[data-intro]");
+const introVideo = document.querySelector("[data-intro-video]");
+
+function revealContent() {
+  if (content) content.classList.add("is-revealed");
+}
+
+function endIntro() {
+  if (!introLayer) {
+    revealContent();
+    return;
+  }
+  introLayer.classList.add("is-hidden");
+  revealContent();
+  setTimeout(() => introLayer.remove(), 650);
+}
+
+if (introLayer && introVideo) {
+  const maxIntroMs = 4200;
+  const fallbackTimer = setTimeout(endIntro, maxIntroMs);
+
+  introVideo.addEventListener("ended", () => {
+    clearTimeout(fallbackTimer);
+    endIntro();
+  });
+
+  introVideo.addEventListener("error", () => {
+    clearTimeout(fallbackTimer);
+    endIntro();
+  });
+
+  introLayer.addEventListener("click", () => {
+    clearTimeout(fallbackTimer);
+    endIntro();
+  });
+
+  introVideo.play().catch(() => {
+    clearTimeout(fallbackTimer);
+    endIntro();
+  });
+} else {
+  revealContent();
+}
+
+const directLinks = document.querySelectorAll("[data-link]");
 
 directLinks.forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
-    const url = link.dataset.link;
-
-    if (url) {
-      window.location.href = url;
-    }
-  });
-});
-
-socialLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
     const url = link.dataset.link;

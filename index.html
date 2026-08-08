@@ -8,14 +8,13 @@
       name="description"
       content="Official links, exclusive content, and latest updates from Saisha Arora."
     />
-    <meta name="theme-color" content="#201413" />
+    <meta name="theme-color" content="#0c0808" />
     <meta property="og:title" content="Saisha Arora" />
     <meta
       property="og:description"
       content="Official links, exclusive content, and latest updates from Saisha Arora."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="photos/bg-main.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Saisha Arora" />
     <meta
@@ -24,7 +23,7 @@
     />
     <link
       rel="icon"
-      href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="18" fill="%23201413"/><text x="50%" y="54%" text-anchor="middle" font-size="28" font-family="Arial" fill="%23fff7f3">S</text></svg>'
+      href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="18" fill="%230c0808"/><text x="50%" y="54%" text-anchor="middle" font-size="28" font-family="Arial" fill="%23fff7f3">S</text></svg>'
     />
     <link rel="manifest" href="manifest.json" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -34,7 +33,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Manrope:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@600;700&family=Manrope:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -43,8 +42,16 @@
     <main class="intro-page">
       <section class="screen-frame">
         <div class="background-layer"></div>
+        <div class="grain-layer" aria-hidden="true"></div>
         <div class="background-glow"></div>
         <div class="overlay-layer"></div>
+
+        <div class="intro-video-layer" data-intro>
+          <video class="intro-video" data-intro-video autoplay muted playsinline>
+            <source src="photos/intro.mp4" type="video/mp4" />
+          </video>
+          <span class="intro-monogram">S</span>
+        </div>
 
         <button class="share-btn" type="button" data-share aria-label="Share this page">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -126,49 +133,57 @@
         </div>
 
         <div class="content">
-          <div class="title-block reveal reveal-name">
-            <p class="intro-line">Access To My Private World</p>
+          <div class="title-block reveal">
+            <p class="intro-line">Official &middot; Saisha Arora</p>
             <h1>SAISHA ARORA</h1>
-            <p class="subtitle">
-              Official links, exclusive content, and latest updates in one place.
-            </p>
+            <p class="power-tag">Exclusive. Intimate. Unseen.</p>
           </div>
 
-          <nav class="link-list" aria-label="Main links">
+          <nav class="link-grid" aria-label="Links">
             <a
-              class="main-link reveal reveal-link-1"
-              href="https://www.instagram.com/saisha.arora01?igsh=endhNTFoMWcwaTd3&utm_source=qr"
-              data-link="https://www.instagram.com/saisha.arora01?igsh=endhNTFoMWcwaTd3&utm_source=qr"
-            >
-              <span class="link-media image-card">
-                <img
-                  src="photos/instagram.jpg"
-                  alt="Instagram preview"
-                  class="link-thumb"
-                />
-              </span>
-              <span class="link-copy">
-                <strong>Instagram</strong>
-                <small>Photos and updates</small>
-              </span>
-            </a>
-            <a
-              class="main-link main-link-primary reveal reveal-link-2"
+              class="link-avatar link-avatar-primary reveal"
               href="https://fanvue.com/saishaarora"
               data-link="https://fanvue.com/saishaarora"
             >
-              <span class="link-media image-card">
-                <img
-                  src="photos/fanvue.jpg"
-                  alt="fanvue preview"
-                  class="link-thumb"
-                />
+              <span class="avatar-media">
+                <span class="avatar-fallback">F</span>
+                <img src="photos/fanvue.jpg" alt="" class="avatar-img" onerror="this.style.display='none'" />
               </span>
-              <span class="link-copy">
-                <strong>Fanvue</strong>
-                <small>Exclusive Content</small>
+              <span class="avatar-badge">New</span>
+              <span class="avatar-label">Fanvue</span>
+            </a>
+            <a
+              class="link-avatar reveal"
+              href="https://www.instagram.com/saisha.arora01?igsh=endhNTFoMWcwaTd3&utm_source=qr"
+              data-link="https://www.instagram.com/saisha.arora01?igsh=endhNTFoMWcwaTd3&utm_source=qr"
+            >
+              <span class="avatar-media">
+                <span class="avatar-fallback">I</span>
+                <img src="photos/instagram.jpg" alt="" class="avatar-img" onerror="this.style.display='none'" />
               </span>
-              <span class="new-badge">New</span>
+              <span class="avatar-label">Instagram</span>
+            </a>
+            <a
+              class="link-avatar reveal"
+              href="https://www.threads.com/@saisha.arora01?invite=0"
+              data-link="https://www.threads.com/@saisha.arora01?invite=0"
+            >
+              <span class="avatar-media">
+                <span class="avatar-fallback">T</span>
+                <img src="photos/threads.jpg" alt="" class="avatar-img" onerror="this.style.display='none'" />
+              </span>
+              <span class="avatar-label">Threads</span>
+            </a>
+            <a
+              class="link-avatar reveal"
+              href="https://www.youtube.com/@saishaarora1"
+              data-link="https://www.youtube.com/@saishaarora1"
+            >
+              <span class="avatar-media">
+                <span class="avatar-fallback">Y</span>
+                <img src="photos/youtube.jpg" alt="" class="avatar-img" onerror="this.style.display='none'" />
+              </span>
+              <span class="avatar-label">YouTube</span>
             </a>
           </nav>
         </div>
