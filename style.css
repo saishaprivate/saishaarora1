@@ -148,6 +148,7 @@ a {
   gap: 22px;
   padding: 24px 22px;
   text-align: center;
+  transform: translateY(80px);
 }
 
 .title-block {
