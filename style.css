@@ -64,10 +64,10 @@ a {
   inset: 0;
 }
 
-/* Placeholder hero look until a real photo is added: swap this
-   background for url("photos/hero.jpg") center/cover no-repeat */
 .background-layer {
   background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.48)),
+    url("photos/background.jpg") center center / cover no-repeat,
     radial-gradient(circle at 30% 18%, rgba(246, 211, 194, 0.2), transparent 42%),
     radial-gradient(circle at 78% 88%, rgba(198, 92, 69, 0.22), transparent 48%),
     linear-gradient(165deg, #241713 0%, #120c0a 55%, #070404 100%);
@@ -190,44 +190,6 @@ h1 {
   text-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
 }
 
-.intro-video-layer {
-  position: absolute;
-  inset: 0;
-  z-index: 70;
-  display: grid;
-  place-items: center;
-  background: #060404;
-  opacity: 1;
-  transition: opacity 0.6s ease;
-}
-
-.intro-video-layer.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.intro-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.intro-monogram {
-  position: relative;
-  z-index: 1;
-  font-family: "Cinzel", serif;
-  font-size: 2rem;
-  color: rgba(255, 247, 243, 0.5);
-  animation: monogramPulse 1.8s ease-in-out infinite;
-}
-
-@keyframes monogramPulse {
-  0%, 100% { opacity: 0.35; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.08); }
-}
-
 .link-grid {
   display: flex;
   justify-content: center;
@@ -314,10 +276,10 @@ h1 {
   transition-delay: 0s;
 }
 
-.content.is-revealed .link-avatar:nth-child(1) { transition-delay: 0.45s; }
-.content.is-revealed .link-avatar:nth-child(2) { transition-delay: 0.62s; }
-.content.is-revealed .link-avatar:nth-child(3) { transition-delay: 0.79s; }
-.content.is-revealed .link-avatar:nth-child(4) { transition-delay: 0.96s; }
+.content.is-revealed .link-avatar:nth-child(1) { transition-delay: 0.05s; }
+.content.is-revealed .link-avatar:nth-child(2) { transition-delay: 0.12s; }
+.content.is-revealed .link-avatar:nth-child(3) { transition-delay: 0.19s; }
+.content.is-revealed .link-avatar:nth-child(4) { transition-delay: 0.26s; }
 
 .share-btn {
   position: absolute;

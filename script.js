@@ -1,73 +1,12 @@
 document.documentElement.classList.add("page-ready");
 
 const content = document.querySelector(".content");
-const introLayer = document.querySelector("[data-intro]");
-const introVideo = document.querySelector("[data-intro-video]");
 
 function revealContent() {
   if (content) content.classList.add("is-revealed");
 }
 
-function endIntro() {
-  if (!introLayer) {
-    revealContent();
-    return;
-  }
-  introLayer.classList.add("is-hidden");
-  revealContent();
-  setTimeout(() => introLayer.remove(), 650);
-}
-
-function freezeLastFrame() {
-  if (!introVideo || !introVideo.videoWidth) return;
-  try {
-    const canvas = document.createElement("canvas");
-    canvas.width = introVideo.videoWidth;
-    canvas.height = introVideo.videoHeight;
-    canvas.getContext("2d").drawImage(introVideo, 0, 0, canvas.width, canvas.height);
-    const frameUrl = canvas.toDataURL("image/jpeg", 0.85);
-    const bgLayer = document.querySelector(".background-layer");
-    if (bgLayer) {
-      bgLayer.style.backgroundImage = `linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.48)), url(${frameUrl})`;
-      bgLayer.style.backgroundSize = "cover";
-      bgLayer.style.backgroundPosition = "center";
-    }
-  } catch (err) {
-    // frame capture unavailable; background keeps its default look
-  }
-}
-
-if (introLayer && introVideo) {
-  const maxIntroMs = 9000;
-  const fallbackTimer = setTimeout(() => {
-    freezeLastFrame();
-    endIntro();
-  }, maxIntroMs);
-
-  introVideo.addEventListener("ended", () => {
-    clearTimeout(fallbackTimer);
-    freezeLastFrame();
-    endIntro();
-  });
-
-  introVideo.addEventListener("error", () => {
-    clearTimeout(fallbackTimer);
-    endIntro();
-  });
-
-  introLayer.addEventListener("click", () => {
-    clearTimeout(fallbackTimer);
-    freezeLastFrame();
-    endIntro();
-  });
-
-  introVideo.play().catch(() => {
-    clearTimeout(fallbackTimer);
-    endIntro();
-  });
-} else {
-  revealContent();
-}
+setTimeout(revealContent, 1000);
 
 const directLinks = document.querySelectorAll("[data-link]");
 
